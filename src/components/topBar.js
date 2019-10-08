@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { View } from 'react-native';
-
-import { SideMenu } from './sideMenu';
+import {Header} from 'react-native-elements';
 
 
-export function TopBar() {
+export function TopBar(props) {
     return (
-        <View>
-            <SideMenu onClose={() => {}}/>
-        </View>
+        <Header
+            containerStyle={{ height: 70, marginTop: -30 }}
+            leftComponent={{ icon: 'menu', color: '#fff', onPress: props.onMenuPress }}
+            centerComponent={{ text: 'SMOS Labs', style: { color: '#fff' } }}
+        />
     );
 }
 

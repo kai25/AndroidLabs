@@ -3,6 +3,8 @@ import React from 'react';
 import { Animated, Text, StyleSheet } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 
+import { Button } from 'react-native-elements';
+
 import { getScreenResolution } from '../utils';
 
 const OPEN_ANIMATION_DURATION = 250;
@@ -10,10 +12,10 @@ const OPEN_ANIMATION_DURATION = 250;
 const styles = StyleSheet.create({
     sideMenuView: {
         position: 'absolute',
-        top: 0,
+        top: 40,
         left: 0,
         right: 0,
-        backgroundColor: '#7DCEA0',
+        backgroundColor: 'lightblue',
     },
 });
 
@@ -58,16 +60,25 @@ export function SideMenu(props) {
         on
     >
         <GestureRecognizer
-            onSwipeLeft={onSwipeLeft}
-            style={{ flex: 1, backgroundColor: 'red' }}
+            onSwipe={onSwipeLeft}
+            style={{ flex: 1, backgroundColor: 'lightblue' }}
             config={{
                 velocityThreshold: 0.3,
                 directionalOffsetThreshold: 80
             }}
         >
-            <Text style={{ color: 'white' }}>
-                SideMenu
-            </Text>
+            <Button
+                title="LabWork 1. Activities"
+                type="clear"
+            />
+            <Button
+                title="LabWork 2. Layout"
+                type="clear"
+            />
+            <Button
+                title="LabWork 3. Database"
+                type="clear"
+            />
         </GestureRecognizer>
     </Animated.View>);
 }
