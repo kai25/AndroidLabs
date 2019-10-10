@@ -19,7 +19,10 @@ const styles = StyleSheet.create({
     },
 });
 
-
+const GESTURE_CONFIG = {
+    velocityThreshold: 0.3,
+    directionalOffsetThreshold: 80
+};
 
 function getSizeAndOffset(screenResolution, offset) {
     return {
@@ -62,23 +65,16 @@ export function SideMenu(props) {
         <GestureRecognizer
             onSwipe={onSwipeLeft}
             style={{ flex: 1, backgroundColor: 'lightblue' }}
-            config={{
-                velocityThreshold: 0.3,
-                directionalOffsetThreshold: 80
-            }}
+            config={GESTURE_CONFIG}
         >
-            <Button
-                title="LabWork 1. Activities"
-                type="clear"
-            />
-            <Button
-                title="LabWork 2. Layout"
-                type="clear"
-            />
-            <Button
-                title="LabWork 3. Database"
-                type="clear"
-            />
+            { props.options.map(option => {
+                return <Button
+                    title={ option.title }
+                    onPress={() => props.onOptionChoose(option.id)}
+                    type='clear'
+                    key={ option.id }
+                />
+            })}
         </GestureRecognizer>
     </Animated.View>);
 }

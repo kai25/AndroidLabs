@@ -1,14 +1,24 @@
 import React from 'react';
 
-import {Header} from 'react-native-elements';
+import { StyleSheet } from 'react-native';
+import { Header } from 'react-native-elements';
+
+const TEXT_COLOR = '#fff';
+
+const styles = StyleSheet.create({
+    containerStyle: {
+        height: 70,
+        marginTop: -30,
+    },
+});
 
 
 export function TopBar(props) {
     return (
         <Header
-            containerStyle={{ height: 70, marginTop: -30 }}
-            leftComponent={{ icon: 'menu', color: '#fff', onPress: props.onMenuPress }}
-            centerComponent={{ text: 'SMOS Labs', style: { color: '#fff' } }}
+            containerStyle={ styles.containerStyle }
+            leftComponent={{ icon: 'menu', color: TEXT_COLOR, onPress: props.onMenuPress }}
+            centerComponent={{ text: 'SMOS Labs', style: { color: TEXT_COLOR } }}
         />
     );
 }
