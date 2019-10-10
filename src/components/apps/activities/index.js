@@ -40,7 +40,6 @@ function getRandomNumber(maxNumber) {
 
 export function ActivitiesApp() {
     const [numberToGuess, setNumberToGuess] = React.useState(getRandomNumber(MAX_NUMBER));
-    console.log(numberToGuess);
     const [userNumberStr, setUserNumberStr] = React.useState(MIN_NUMBER.toString());
     const [displayText, setDisplayText] = React.useState(START_TEXT);
     const [isWinner, setWinner] = React.useState(false);

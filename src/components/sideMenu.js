@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Animated, Text, StyleSheet } from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
 import GestureRecognizer from 'react-native-swipe-gestures';
 
 import { Button } from 'react-native-elements';
